@@ -9,7 +9,7 @@ let row = document.querySelector('.row')
 function createSquares (){
     let number= +prompt('Select sketch size up to 100', 0); 
      if(number>100) {
-        +prompt('please select up to 100')
+        number = +prompt('please select up to 100')
      }     
      createColumn(number);
          
