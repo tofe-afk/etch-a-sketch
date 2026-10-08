@@ -1,12 +1,15 @@
 let container = document.querySelector('#container')
 let button=document.querySelector('#reset')
 let button2=document.querySelector('#create')
-let column=document.querySelector('.column')
-let row = document.querySelector('.row')
+let div=document.querySelector('div')
 
 
+div.addEventListener('mouseover', (e) => {
+    e.target.style.opacity = Number(e.target.style.opacity) + 0.1
+    })
 
-function createSquares (){
+
+    function createSquares (){
     let number= +prompt('Select sketch size up to 100', 0); 
      if(number>100) {
         number = +prompt('please select up to 100')
@@ -16,7 +19,7 @@ function createSquares (){
 
 }
 
-createColumn(10)
+createColumn(16)
 
 
 function eraseGrid(){
@@ -37,14 +40,14 @@ function createColumn(size) {
     let container = document.querySelector('#container')
     for(let i=0; i<size; i++) {
      let column = document.createElement('div')
-     column.setAttribute('style', 'border: 1px solid black;')
+     column.setAttribute('style', 'border: 1px solid black; opacity=100%')
      column.classList.add('column')
     for(let j =1; j<= size; j++) {
         let row = document.createElement('div')
         row.setAttribute('style', 'border: 1px solid black;')
         row.classList.add('row')
-        row.addEventListener('mouseenter', () => {
-            row.style.backgroundColor='brown'
+        row.addEventListener('mouseover', () => {
+            row.style.backgroundColor='green'
         })
      column.appendChild(row)
 
