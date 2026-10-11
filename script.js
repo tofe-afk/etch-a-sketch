@@ -8,10 +8,10 @@ let div=document.querySelector('div')
 function createSquares (){
     let number= +prompt('Select sketch size up to 100', 0); 
      if(number>100) {
-        number = +prompt('please select up to 100')
-     }     
-     createColumn(number);
-         
+       alert('Please select up to 100');
+         number = 16;
+    } 
+        createColumn(number);
 
 }
 
@@ -27,6 +27,12 @@ function eraseGrid(){
 }
 
 
+ div.addEventListener('mouseover', function (e){
+   e.target.style.opacity =Number(e.target.style.opacity) + 0.1 
+
+
+ })
+
 button2.addEventListener('click', eraseGrid)
 button.addEventListener('click', resetButton)
 
@@ -36,15 +42,13 @@ function createColumn(size) {
     let container = document.querySelector('#container')
     for(let i=0; i<size; i++) {
      let column = document.createElement('p')
-     column.setAttribute('style', 'border: 1px solid black; ')
      column.classList.add('column')
     for(let j =1; j<= size; j++) {
         let row = document.createElement('div')
-        row.setAttribute('style', 'border: 1px solid black; opacity:0.4')
+        row.setAttribute('style', 'border:1px solid black', 'background-colo:white')
         row.classList.add('row')
         row.addEventListener('mouseover', () => {
-        row.style.backgroundColor='green'
-        row.style.opacity='0,1'
+        row.style.backgroundColor='black'
         })
      column.appendChild(row)
 
@@ -54,11 +58,13 @@ function createColumn(size) {
     }}
       
     
-    function resetButton() {
+ function resetButton() {
     const rows = document.querySelectorAll('.row')
     rows.forEach((row) => {
         row.style.backgroundColor = 'white'
-    })
+        row.setAttribute('style', 'border:1px solid black')
+    }
+  )
 }
 
 

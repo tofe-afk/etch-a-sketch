@@ -14,8 +14,14 @@ body {
     justify-content: center;
     width: 800px;
     height: 800px;
-    padding-top: 50px;
-    margin-bottom: 30px;
+    margin: 20px;
+    background-color: rgb(44, 44, 233);
+}
+
+h1{
+    font-size: 50px;
+    color: white;
+    
 }
 
 button {
@@ -24,6 +30,8 @@ button {
     width: 40x;
     padding: 10px;
     font-size: 20px; 
+    border-radius: 10px;
+    background: rgb(195, 194, 194);
  
 }
 
@@ -34,7 +42,8 @@ button {
     flex-direction: row;
     justify-content: space-around;
     width: 650px;
-    height: 600px;    
+    height: 600px;  
+    background-color: white;
 } 
 
 .column {
@@ -47,6 +56,5 @@ button {
     flex: 1 1 auto;
     display: flex;
     flex-direction: row;
+    background-color: white;
 }
-
-
